@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
 import { Button, ActionSheet } from 'vant'
 
 Vue.config.productionTip = false
@@ -12,6 +13,7 @@ Vue.use(ActionSheet)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

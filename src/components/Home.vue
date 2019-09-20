@@ -2,6 +2,8 @@
   <div class="home">
     <h1 class="head">这是我第一个页面</h1>
     <van-button type="default" @click="onShowActionSheet">默认按钮</van-button>
+    <van-button type="default" @click="changeBackground('green')">绿色</van-button>
+    <van-button type="default" @click="changeBackground('red')">红色</van-button>
     <van-action-sheet
       v-model='show'
       :actions='actions'
@@ -31,6 +33,9 @@ export default {
     onSelect (item) {
       this.show = false
       window.Toast(item.name)
+    },
+    changeBackground (color) {
+      this.$store.dispatch('changeBackground', color)
     }
   }
 }

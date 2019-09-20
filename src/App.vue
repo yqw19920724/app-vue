@@ -1,13 +1,26 @@
 <template>
-  <div id="app">
+  <div id="app" :style="style">
     <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex' //注册 action 和 state
 export default {
-  name: 'App'
+  name: 'App',
+  data () {
+    return {
+    }
+  },
+  computed: {
+    ...mapState(['backgroundColor']),
+    style () {
+      return {
+        backgroundColor: this.backgroundColor
+      }
+    }
+  }
 }
 </script>
 
