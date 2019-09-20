@@ -32,7 +32,9 @@ export default {
     },
     onSelect (item) {
       this.show = false
-      window.Toast(item.name)
+      this.$toast({
+        message: item.name
+      })
     },
     changeBackground (color) {
       this.$store.dispatch('changeBackground', color)
