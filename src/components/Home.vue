@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: 'Home',
   data () {
@@ -27,6 +28,9 @@ export default {
     }
   },
   methods: {
+    ...mapActions({
+      changeBackground:'changeBackground'
+    }),
     onShowActionSheet () {
       this.show = true
     },
@@ -36,9 +40,6 @@ export default {
         message: item.name
       })
     },
-    changeBackground (color) {
-      this.$store.dispatch('changeBackground', color)
-    }
   }
 }
 </script>

@@ -14,7 +14,9 @@ export default {
     }
   },
   computed: {
-    ...mapState(['backgroundColor']),
+    ...mapState({
+      backgroundColor: state => state.home.backgroundColor
+    }),
     style () {
       return {
         backgroundColor: this.backgroundColor
